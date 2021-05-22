@@ -1,0 +1,72 @@
+task1.html 
+<!DOCTYPE html> 
+<html lang='eng'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width">
+    <body>
+    <script>alert('Anastasia')</script>
+    </body>
+</html>
+
+task2.html
+<!DOCTYPE html>
+<html lang='eng'>
+    <meta charset="UTF-8">
+    <body>
+        <script src='task2.js'></script>
+    </body>
+    </html>
+
+task2.js
+const x = ('Goluk');
+console.log(x)
+
+task3.js
+let a = 5;
+let b = 10;
+console.log (a, b);
+a = b;
+console.log(a, b);
+
+task4.js
+let human = {
+    string: 'Anastasia',
+    number: 1,
+    boolean: true,
+    undefined: undefined,
+    null: null
+}
+
+task5.js
+const isAdult = confirm('Do you have 18 y.o.?');
+console.log(isAdult);
+
+task6.js
+let firstName = 'Anastasia';
+let lastName = 'Goluk';
+let group = '602 JS core';
+let yearWasBorn = 1992;
+let isMarriage = false;
+typeof(firstName), typeof(lastName), typeof(group), typeof(yearWasBorn), typeof(isMarriage);
+console.log(firstName, lastName, group, yearWasBorn, isMarriage);
+
+console.log(yearWasBorn, isMarriage, firstName, lastName, group)
+
+// Виведіть значення змінних в консоль, відповідно до їх типу, в такому порядку: Number, Boolean, String. - вивела і написала значення вручну. 
+// Не знаю чи власне в цьому полягало завдання, але як на першу домашку, думаю, не варто ускладнювати 
+
+let a = null;
+let b;
+console.log(typeof(a), typeof(b));
+
+task7.js
+let user = (prompt('Enter login'));
+let email = (prompt('Enter email'));
+let password = (prompt('Enter password'));
+console.log(`Dear ${user}, your emails is ${email}, your password is ${password}`);
+
+task8.js
+let secInHour = (60*60);
+let secInDay = (secInHour * 24);
+let secInMonth = (secInDay * 30);
+console.log(secInHour, secInDay, secInMonth);
