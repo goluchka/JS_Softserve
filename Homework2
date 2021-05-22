@@ -1,0 +1,148 @@
+task1.js
+let x = 1;
+let y = 2;
+let res1 = x + '' + y;
+console.log(res1); 
+console.log(typeof res1); 
+
+let res2 = !!x + "" + y; 
+
+let res3 = !x || !!y;
+
+let res4 = parseFloat('x') + parseInt('y');
+
+task2.js
+let a = (prompt('Enter the number'));
+console.log ((b = a % 2), (c = a % 7));
+if (b > 0) {
+console.log("Непарне додатне число")
+} else {
+console.log("Парне додатне число")
+};
+if (c > 0) {
+console.log('Число не є кратне 7') 
+} else {
+console.log('Число кратне 7')
+};
+
+task3.js
+const empty = [
+    first = 1,
+    second = 'second line',
+    third = true,
+    fourth = null
+    ];
+console.log(empty.length);
+
+let question = prompt('Enter any value');
+empty[4] = question;
+console.log(empty[4]);
+empty.shift(0);
+console.log(empty);
+
+task4.js
+let cities = ["Rome", "Lviv", "Warsaw"]; 
+console.log(cities.join('*'));
+
+task5.js
+let isAdult = (prompt('How are you?'));
+if (isAdult >= 18) {
+    alert("Ви досягли повнолітнього віку");
+} else { 
+    alert('Ви ще надто молоді');
+}
+
+task6.js
+let a = +prompt('Enter first lenght');
+let b = +prompt('Enter second lenght');
+let c = +prompt('Enter third lenght');
+if(isNaN(a) || isNaN(b) || isNaN(c)) {
+    alert("Incorrect data"); 
+   }
+
+let p = ((a + b + c) / 2); 
+let s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+console.log(s.toFixed(3));
+
+let cSquare = Math.pow(c);
+let aBSquare = (Math.pow(a) + Math.pow(b));
+if (cSquare == aBSquare) { 
+    console.log('Triangle is rectangular') 
+} else {
+    console.log('Triangle is not rectangular')
+}
+
+
+task7.js
+let hour = new Date().getHours();
+if (hour < 23 && hour > 17) {
+    alert("Доброго вечора");
+    } else if (hour < 11 && hour > 5) {
+        alert("Доброго ранку");         
+    } else if (hour < 17 && hour > 11) { 
+        alert("Доброго дня");
+    } else {
+        alert("Доброї ночі");
+    } 
+
+
+let hour;
+    switch (new Date().getHours()) {
+        case 23: 
+        alert('Доброї ночі');
+        break;
+        case 00: 
+        alert('Доброї ночі');
+        break;
+        case 01: 
+        alert('Доброї ночі');
+        break;
+        case 02: 
+        alert('Доброї ночі');
+        break;
+        case 03: 
+        alert('Доброї ночі');
+        break;
+        case 04: 
+        alert('Доброї ночі');
+        break;
+        case 05: 
+        alert('Доброї ночі');
+        break;
+        case 06: 
+        console.log('Доброго ранку');
+        break;
+        case 07: 
+        console.log('Доброго ранку');
+        break;
+        case 08: 
+        console.log('Доброго ранку');
+        break;
+        case 09: 
+        console.log('Доброго ранку');
+        case 10: 
+        console.log('Доброго ранку');
+        case 11: 
+        console.log('Доброго дня');
+        break;
+        case 12: 
+        console.log('Доброго дня');
+        break;
+        case 13: 
+        console.log('Доброго дня');
+        break;
+        case 14: 
+        console.log('Доброго дня');
+        break;
+        case 15: 
+        console.log('Доброго дня');
+        break;
+        case 16: 
+        console.log('Доброго дня');
+        break;
+        case 17: 
+        console.log('Доброго дня');
+        break;
+        default: 
+        console.log('Доброго вечора');
+    }
