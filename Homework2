@@ -9,7 +9,7 @@ let res2 = !!x + "" + y;
 
 let res3 = !x || !!y;
 
-let res4 = parseFloat('x') + parseInt('y');
+let res4 = Number('hello') + x + y;
 
 task2.js
 let a = (prompt('Enter the number'));
