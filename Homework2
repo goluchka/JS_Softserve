@@ -46,11 +46,7 @@ console.log(cities.join('*'));
 
 task5.js
 let isAdult = (prompt('How are you?'));
-if (isAdult >= 18) {
-    alert("Ви досягли повнолітнього віку");
-} else { 
-    alert('Ви ще надто молоді');
-}
+isAdult >= 18 ? alert("Ви досягли повнолітнього віку") : alert('Ви ще надто молоді');
 
 task6.js
 let a = +prompt('Enter first lenght');
