@@ -1,0 +1,104 @@
+task1
+const arr = ['2', '3', '4', '5'];
+let total = 1;
+for (i = 0; i < arr.length; i++) {
+    total *= arr[i];
+};
+console.log(total);
+
+const arr = ['2', '3', '4', '5'];
+let total = 1;
+let i = 0;
+while (i < arr.length) {
+    total *= arr[i];
+    i++;
+    }
+console.log(total);
+
+task2
+for (let i = 0; i <= 15; i++) { 
+    if (i % 2 == 0) {
+ console.log(`${i} is even`) } else { console.log(`${i} is odd`) };
+}
+
+
+task3
+const randArray = (elements, min, max) => {
+    if (elements > (max - min)) return;
+    let k = [], t;
+  
+    while (elements) {
+      t = Math.floor(Math.random() * (max - min) + min);
+      if (k.indexOf(t) === -1) {
+        k.push(t);
+        elements--;
+      }
+    }
+      return k;
+  }
+    console.log('New k array is : ' + (randArray(5, 0, 500)));
+    
+    
+    task4
+let raiseToDegree = (a, b) => {
+          if (Number.isInteger(a) && Number.isInteger(b)) {
+          return Math.pow(a, b);
+          } else {
+          return 'Enter the integer';
+          }
+};
+raiseToDegree(5.3, 2);
+
+
+task5
+let arguments = [];
+findMin = (arguments) => {
+    let min = arguments[0];
+    for (let i = 0; i < arguments.length; i++) {
+        if (min > arguments[i]) min = arguments[i];
+    }
+    return min;
+};
+console.log(findMin(arguments[5, 0, -5]));
+
+
+task6
+function findUnique(array) {
+    let valuesAlreadySeen = []
+  
+    for (let i = 0; i < array.length; i++) {
+      let value = array[i]
+      if (valuesAlreadySeen.indexOf(value) !== -1) {
+        return false
+      }
+      valuesAlreadySeen.push(value)
+    }
+    return true
+  };
+  
+  
+  task7
+  
+  
+  
+  
+  task8
+  function firstLetterToUpperCase(str) {
+    let a;
+    for (let i = 0; i < str.length; i++) {
+        if((str[i-1]==' ') || str[i-1]=='.' || str[i-1]==','){
+            a += str[i].toUpperCase();
+        }else if (i==0  ){
+            a= str[0].toUpperCase();
+        }else{
+            a+= str[i];
+        }
+        }
+        return a;
+    }
+    console.log(firstLetterToUpperCase('i love js'))
+    
+    
+    
+  
+  
