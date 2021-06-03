@@ -78,7 +78,12 @@ function findUnique(array) {
   
   
   task7
-  
+ let arr = [1, 2, 3, 4];
+let x = (arr.length - 1);
+let lastElem = (arr, x) => {
+return arr.splice(-x, x);
+};
+console.log(lastElem([3, 4, 10, -5], 2));
   
   
   
