@@ -1,0 +1,82 @@
+task1 
+let calcRectangleArea = (width, height) => {
+    if (isNaN(width) || isNaN(height)) {
+        throw 'Enter the number!';
+    }
+    return width * height;
+}
+
+try {
+    alert(calcRectangleArea(4, '0'));
+}
+
+catch (error) {
+    console.log(error); 
+}
+
+
+task2
+let checkAge = () => {
+    try{
+        let age = prompt('Enter your age to continue')
+        if (age == '')
+            throw new Error('This field couldnt be empty. Enter your age');
+        else if (isNaN(parseInt(age)))
+            throw new Error('Enter your age')
+        else if (age < 14)
+            throw new Error('Sorry, you are too young for this movie');
+        alert('Enjoy the movie!');
+    }
+    catch (error) {
+        alert(error.name + ' ' + error.message)
+        }
+    }   
+    checkAge();
+    
+   task3
+   class MonthException {
+    constructor(message) {
+        this.message = message;
+        this.name = 'MonthException';
+    }
+}
+
+let showMonthName = (month) => {
+    month = month - 1; 
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
+    if (months[month] !== undefined) {
+        return months[month]; 
+    } else {
+        throw new MonthException('Incorrect month number');
+    }
+}
+
+try {
+    let myMonth = 2;
+    let monthName = showMonthName(myMonth);
+    console.log(monthName);
+}   catch (e) {
+    console.error(e.name, e.message);
+}
+
+task4
+let showUser = (id) => {
+    if (id < 0) {
+        throw new Error(`ID must not be negative: ${id}`);
+    }
+    return { id: id };
+}
+
+let showUsers = (ids) => {
+    let result = [];
+    ids.forEach(function (id) {
+    try {
+        let person = showUser(id);
+        result.push(person);
+    } catch (exception) {
+        console.log(exception.message);
+    }
+});
+return result;
+}
+showUsers([5, 3, 64, 21]);
