@@ -23,33 +23,42 @@ console.log(showProps({name: 'Frenk', height: 30, weight: 5, color: 'brown', eye
 
 task3
 class Person {
-    constructor(name) { 
+    constructor(name, surname) { 
         this.name = name;
         this.surname = surname;
         }
 
 showFullName () {
     console.log(`${this.name} ${this.surname}`);
+    }
 }
-}
-let person = new Person('Sam', 'Wats');
-person.showFullName(); 
 
 class Student extends Person {
-       this.midleName = midleName;
+       constructor(name, surname, year) { 
+       super(name, surname);
        this.year = year;
-}
-let student = new Student() 
+} 
 
-showFullName () {
-    super.showFullName();
-    this.showFullName(`${this.name} ${this.surname} ${this.midleName}`);
+showFullName (midleName) {
+    return super.showFullName() + ' ' + midleName;
+    }
+
+showCourse() {
+    let today = new Date();
+    let currentYear = date.getFullYear();
+    return currentYear - this.year;
+}
 }
 
-showCourse(currentCourse) {
-    let currentCourse = (2021 - this.year);
-    console.log("Current course: " + student.showCourse());
-}
+let stud1 = new Student('Dua', 'Lipa', 2017);
+console.log(stud1.showFullName('Lipa'));
+console.log('Current course: ' + stud1.showCourse());
+let stud2 = new Student('Aretha', 'Franklin', 2016);
+console.log(stud2.showFullName('Franklin'));
+console.log('Current course: ' + stud2.showCourse());
+let stud3 = new Student('Ella', 'Fitzgerald', 2020);
+console.log(stud2.showFullName('Fitzgerald'));
+console.log('Current course: ' + stud3.showCourse());
 
 
 task4
