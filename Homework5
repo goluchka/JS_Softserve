@@ -1,0 +1,116 @@
+task1
+let propsCount = (currentObject) => {
+    return Object.keys(currentObject).length;
+}
+console.log(propsCount(currentObject = { 
+    course: "JS fundamental", 
+    duration: 3,
+    direction: "web-development" 
+} ))
+
+task2
+let obj = {
+    name: 'Frenk',
+    height: 30,
+    weight: 5,
+    color: 'brown',
+    eyes: 'green'
+}
+
+let showProps = (obj) => {
+    return Object.entries(obj);
+};
+console.log(showProps(obj))
+
+
+task3
+class Person {
+    constructor(name) { 
+        this.name = name;
+        this.surname = surname;
+        }
+
+showFullName () {
+    console.log(`${this.name} ${this.surname}`);
+}
+}
+let person = new Person('Sam', 'Wats');
+person.showFullName(); 
+
+class Student extends Person {
+       this.midleName = midleName;
+       this.year = year;
+}
+let student = new Student() 
+
+showFullName () {
+    super.showFullName();
+    this.showFullName(`${this.name} ${this.surname} ${this.midleName}`);
+}
+
+showCourse(currentCourse) {
+    let currentCourse = (2021 - this.year);
+    console.log("Current course: " + student.showCourse());
+}
+
+
+task4
+
+
+task5
+class GeometricFigure {
+    constructor() {}
+    get area() {
+        return 0; 
+    }
+    toString() {
+        return Object.getPrototypeOf(this).constructor.name;
+    }
+}
+class Triangle extends GeometricFigure {
+    constructor(a, b, c) {
+        super();
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+    getArea() {
+        let p = (this.a + this.b + this.c) / 2;
+        let s = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
+        return s;
+    }
+}
+class Square extends GeometricFigure {
+    constructor(a) {
+        super();
+        this.a = a;
+    }
+    getArea() {
+        let s = (this.a * this.a);
+        return s;
+    }
+}
+class Circle extends GeometricFigure {
+    constructor(r) {
+        super();
+        this.r = r;
+    };
+    getArea() {
+        let s = Math.PI * (this.r * this.r);
+        return s;
+    };
+}
+let figures = [new Triangle(4, 3, 5), new Square(4), new Circle(8)];
+let handleFigures = (figures) =&gt; {
+
+    let totalArea = 0;
+    for (let i = 0; i &lt; figures.length; i++) {
+        if((figures[i]) instanceof(GeometricFigure)) { 
+            console.log(`Geometric figure: ${figures[i].toString()} -
+ area: ${figures[i].getArea()}`);
+            totalArea = total.area + figures[i].getArea();
+        };
+    };
+    return console.log(`Total area - ${totalArea}`);
+}
+handleFigures(figures);
