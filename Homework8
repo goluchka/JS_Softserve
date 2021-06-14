@@ -1,0 +1,11 @@
+task1
+let checkCase = (text) => {
+    if (text.match(/^[A-Z]/)) {
+        console.log("It's upper case")
+    } else {
+        console.log("It's lower case")
+    }
+}
+checkCase('blablabla');
+
+
