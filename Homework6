@@ -1,0 +1,160 @@
+task1
+<!DOCTYPE html>
+
+<body>	
+	<div id="test">First</div>
+    <script>
+        document.getElementById('test').innerHTML = 'Last';
+     </script>
+
+     <script> 
+        let a = document.body.children[0];
+        a.innerHTML = 'Last1';
+    </script>
+
+  </body>	
+  
+  
+  task2
+  <!DOCTYPE html>
+<html>
+<body>
+	<img class="image" src="dog.jpg" width='50%' height="50%">
+
+<script> 
+    let img = document.getElementsByClassName("image")[0];
+    img.onload = function () {
+        alert(img);
+    };
+    img.src = "cat.jpg";
+</script>
+
+</body>
+</html>
+
+
+  task3
+ <!DOCTYPE html>
+
+<body>
+	<h2>Article header</h2>      
+      <div id="text">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+      </div>
+	<p>Another text</p>
+    
+<script>
+    let x = document.querySelectorAll("p");
+    for (let i = 0; i < x.length-1; i++) {
+        alert(`Selector text ${i}: ${x[i].innerHTML}`);
+    }
+</script>
+
+</body>
+
+task4
+<!DOCTYPE html>
+<html>
+    <body>
+        <ul id="list">
+            <li>1</li> 
+            <li>2</li> 
+            <li>3</li> 
+            <li>4</li> 
+            <li>5</li>
+        </ul>
+
+    <script>
+    let parentEl = document.getElementById("list");
+    let firstEl = parentEl.children[0].innerHTML; 
+    let lastEl = parentEl.children[4].innerHTML;
+    let secEl = parentEl.children[1].innerHTML;
+    let fourthEl = parentEl.children[3].innerHTML;
+    let thirdEl = parentEl.children[2].innerHTML;
+
+    alert(firstEl);
+    alert(lastEl);
+    alert(secEl);
+    alert(fourthEl);
+    alert(thirdEl);
+
+  
+
+let firstEl = document.getElementById("list").firstChild.innerHTML;
+let lastEl = document.getElementById("list").lastChild.innerHTML;
+let secEl = document.getElementById("list").firstChild.nextSibling.innerHTML;
+let fourthEl = document.getElementById("list").lastChild.previousSibling.innerHTML;
+let thirdEl = document.getElementById("list").firstChild.nextSibling.nextSibling.innerHTML;
+
+alert(firstEl);
+alert(lastEl);
+alert(secEl);
+alert(fourthEl);
+alert(thirdEl); - в мене чомусь не працює другий спосіб, а все написано в точності як у тебе на рев"ю. Чому?
+
+</script>
+</body>
+</html>
+
+task5
+<!DOCTYPE html>
+<body>
+	<h1>I'am a big header!!!</h1>
+        <div id="myDiv">
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+            <p>Third paragraph</p>
+            <p>Fourth paragraph</p>
+        </div>
+        <ul id="myList">
+            <li>Make</li>
+            <li>me</li>
+            <li>horizontal!</li>
+        </ul>
+        <span>Make me invisible, please!</span>
+
+        <script>
+            document.querySelector('h1').style.backgroundColor = "#7CFC00";   
+            document.getElementById("myDiv").children[0].style.fontWeight = "700"; 
+            document.getElementById("myDiv").children[1].style.color = "#ff0000"; 
+            document.getElementById("myDiv").children[2].style.textDecoration = "underline"; 
+            document.getElementById("myDiv").children[3].style.fontStyle = "italic"; 
+            document.getElementById("myList").style.listStyle = "none";
+            document.getElementById("myList").style.display = "flex";
+            document.getElementsByTagName("span")[0].style.display = "none";
+            
+        </script>
+
+	    </body>
+
+
+task6
+<body>
+<input type="text" id="input1" value="Text1">
+<input type="text" id="input2" value="Text2">
+
+<script>
+    let a = document.getElementById('input1').value = prompt('Enter first number');
+    let b = document.getElementById('input2').value = prompt('Enter second number');
+
+    let c = document.getElementById('input1').value = b;
+    let d = document.getElementById('input2').value = a;
+</script>
+</body>
+
+task7
+<body>
+    <script>
+    document.body.innerHTML = 
+        `<main class="mainClass check item"> 	
+            <div id="myDiv">
+            <p>First paragraph</p>           
+            </div>
+        </main>`;
+    </script>
+</body>
+
+
+  
