@@ -1,0 +1,88 @@
+task1
+<body>
+    
+    <script>   
+    let firstTab = window.open("", "", "height=300,width=300");
+    let changeSize = setTimeout(function(){ firstTab.resizeTo(500, 500)}, 2000);
+    let moveTab = setTimeout(function(){ firstTab.moveTo(200, 200)}, 2000); 
+    let closeTab = setTimeout(function(){ firstTab.close()}, 2000); //чомусь не спрацовує таймер в 2 останніх випадках
+    </script>
+
+</body>
+
+
+task2
+<body>
+<p id ='text'>I learn JavaScript events!</p> 
+<div>
+	<button onclick = changeCSS()> Change style! </button>
+</div>
+
+<script> 
+    let changeCSS = () => {
+    text.style.color = "orange";
+    text.style.fontSize = "20px";
+    text.style.fontFamily = "Comic Sans MS";
+}
+</script>
+</body>
+
+
+
+task3
+<body>
+        <div style="width: 20%, height: 25%; float: left; margin: 10px;">
+            <button onclick = "document.body.style.backgroundColor = '#ADD8E6';"> Just click! </button>
+        </div> 
+        
+        <div style="width: 20%, height: 25%; float: left; margin: 10px;">
+            <button ondblclick = "document.body.style.backgroundColor = '#ffe6ff';"> Just give double click! </button>
+        </div>
+
+       
+
+        <div style="width: 20%, height: 25%; float: left; margin: 10px;">
+            <button onmousedown = "document.body.style.backgroundColor = '#BC8F8F';" onmouseup = "document.body.style.backgroundColor ='#F8F8FF';">Just press and hold fow a while!</button>
+        </div>
+
+        <div style="width: 20%, height: 25%; float: left; margin: 10px;">
+            <a href="" onmouseover = "document.body.style.backgroundColor ='#FFE4C4';" onmouseout = "document.body.style.backgroundColor ='#F8F8FF';"> How to make a page yellow </a>
+        </div>     
+        </body>
+        
+  
+  
+ task4
+ 
+ 
+ 
+ 
+ task5
+ 
+ 
+ 
+ task6
+ <!DOCTYPE html>
+
+<body>
+<div id="result"></div>
+
+<script>        
+let showyWindowSize = () => {
+    let w = document.documentElement.clientWidth;
+    let h = document.documentElement.clientHeight;
+    
+    document.getElementById("result").innerHTML = (`Width: ${w}, height: ${h}`);
+}
+    
+window.addEventListener("resize", showyWindowSize);
+
+showyWindowSize();
+</script>
+<p><strong>Note:</strong> Please resize the browser window to see how it works.</p>
+</body>
+</html>
+
+
+task7
+
