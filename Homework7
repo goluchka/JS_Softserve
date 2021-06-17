@@ -53,12 +53,73 @@ task3
   
   
  task4
+ <form>
+    <select id="names">
+        <option> Nastia </option>
+        <option> Dima </option>
+        <option> Sashko </option>
+        <option> Olga </option>
+    </select>
+<input type="button" id="myBtn" value = "Choose and delete">
+</form>
+
+<script>
+    myBtn.addEventListener("click", deleteColor);
+      
+    function deleteColor() {
+    let x = document.getElementById("names");
+    x.remove(x.selectedIndex);
+    }
+</script>
  
  
  
+ task5 - моє початкове рішення. не сильно елегантне, працює лише через алерт і не працює на клік, бо спрацьовує алерт при наведенні мишки на кнопку. але залишаю його тут на пам"ять колись собі почитати і оцінити вкладені зусилля і час :))
+<body>
+
+<script> 
+//writing function for each event
+let message1 = () => {
+    return ("I was pressed!") };
+    
+let message2 = () => {
+    return ("Mouse on me!");
+    }    
+    
+let message3 = () => {
+    return ("Mouse is not on me!");
+    }
+</script>
  
- task5
- 
+<div style='margin: 50px'>
+    <button onclick ="alert(message1())" || button onmouseover = "alert(message2())" || button onmouseout = "alert(message3())" id = 'liveButton'> Live button!</button> 
+ </div>
+
+<input style = 'height: 300px' type = 'text' id = 'result'> 
+</body>
+
+task 5 - правильне рішення. Додаткове питання: як додати перенос рядка (\n), так щоб кожне повідомлення з"являлось під кнопкою в стовбчик?
+ <button id="liveButton" style="margin:50px">Live button!</button>
+<p id="myId"></p>
+
+<script>
+    let x = document.getElementById("liveButton");
+    x.addEventListener("mouseover", mouseOverFunction);
+    x.addEventListener("click", mouseClickFunction);
+    x.addEventListener("mouseout", mouseOutFunction);
+
+    function mouseOverFunction() {
+        document.getElementById("myId").innerHTML += "Mouse on me!   ";
+    }
+
+    function mouseClickFunction() {
+        document.getElementById("myId").innerHTML += "I was pressed!  ";
+    }
+
+    function mouseOutFunction() {
+        document.getElementById("myId").innerHTML += "Mouse is not on me!  ";
+    }
+</script>
  
  
  task6
@@ -85,4 +146,47 @@ showyWindowSize();
 
 
 task7
+<body>
+<select name="country" id="country">
+	<option value="ger">Germany</option>
+	<option value="usa">USA</option>
+	<option value="ukr">Ukraine</option>
+</select>
+                    
+<select name="cities" id="cities"></select>
+<p></p>
+
+<script>
+    const cityArr = {
+        'ger': ['Berlin', 'Hamburg', 'Dortmund', 'Frankfurt'],
+        'usa': ['New York', 'Washington', 'Boston', 'Chicago'],
+        'ukr': ['Lviv', 'Kyiv', 'Odessa', 'Dnipro'],
+    }
+
+    let prime_select = document.getElementById('country');
+    prime_select.addEventListener('change', func);
+    prime_select.addEventListener('change', toParagraph);
+
+    let city_select = document.getElementById('cities');
+    city_select.addEventListener('change', toParagraph);
+
+    function func() {
+        city_select.innerHTML = '';
+        let selected_country = prime_select.value;
+        for (let i = 0; i < cityArr[selected_country].length; i++) {
+            let new_option = document.createElement('option');
+            new_option.innerHTML = cityArr[selected_country][i];
+            city_select.appendChild(new_option);
+        }
+    }
+
+    let parag = document.querySelector('p');
+
+    function toParagraph() {
+        parag.innerHTML = '';
+        parag.innerHTML = prime_select.options[prime_select.selectedIndex].text + ', ' + city_select.options[city_select.selectedIndex].text;
+    }
+</script>
+
+</body>
 
