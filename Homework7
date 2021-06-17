@@ -4,8 +4,8 @@ task1
     <script>   
     let firstTab = window.open("", "", "height=300,width=300");
     let changeSize = setTimeout(function(){ firstTab.resizeTo(500, 500)}, 2000);
-    let moveTab = setTimeout(function(){ firstTab.moveTo(200, 200)}, 2000); 
-    let closeTab = setTimeout(function(){ firstTab.close()}, 2000); //чомусь не спрацовує таймер в 2 останніх випадках
+    let moveTab = setTimeout(function(){ firstTab.moveTo(200, 200)}, 4000); 
+    let closeTab = setTimeout(function(){ firstTab.close()}, 6000); 
     </script>
 
 </body>
