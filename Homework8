@@ -8,4 +8,14 @@ let checkCase = (text) => {
 }
 checkCase('blablabla');
 
+task2
+let checkEmail = (email) => {
+    if (email.match(/\S+@\S+\.\S+/)) {
+        console.log(true)
+    } else {
+        console.log(false)
+    }
+}
+checkEmail('fhf@Speecst.com');
+
 
