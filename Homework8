@@ -19,3 +19,58 @@ let checkEmail = (email) => {
 checkEmail('fhf@Speecst.com');
 
 
+task3
+let text = "cdbBdbbbbsbzd";
+let re = /d{1}(b+)(d{1})/i;
+let result = text.match(re);
+    console.log(result);
+"запам"ятати знайдені b і наступну d" - це як?
+
+
+task4
+let str = 'Java Script';
+let re = str.split(' ');
+console.log(re[1], re[0]); - це без регулярки, просто побічний ефект творчості :))
+
+а тут прийшло осяяння і вийшов варіант з регуляркою:
+let a = /\b\w\b/;
+let b = /\b\w/;
+let changeWords = (a, b) => {
+	console.log(b + " " + a);
+}
+changeWords('Java', 'Script')
+
+
+task5
+let checkCardNum = (cardNum) => {
+    if (cardNum.match(/\d{16}/)) {
+        console.log('Card number is valid')
+    } else {
+        console.log('Card number is invailid')
+    }
+}
+checkCardNum('123456789111314'); - вводити лише цифри без додаткових символів!
+/\d{4}-?\d{4}-?\d{4}-?\d{4}/ //можна вводити нр карти з дефісом (optional)
+
+
+task6
+let checkMail = (mail) => {
+    if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+     console.log ('Email is correct!');
+     } else {
+       console.log ('Email is incorrect!')
+     }
+   }
+   checkMail('mymail@gmail.com')
+
+
+task7
+let checkLogin = (login) => {
+    if (/^[A-Za-z0-9]{2,10}$/i.test(login)) {
+        console.log(true);
+        console.log(login.match(/\d+\./g));
+    } else { 
+        console.log(false);
+    }
+}
+checkLogin('dvb4hr13') // поки не знаю як знайти floating number. додала варіант з опціональною крапкою (/(^[A-Za-z0-9]{2,10})\.?$/i.test(login)), але це не сильно допомогло 
