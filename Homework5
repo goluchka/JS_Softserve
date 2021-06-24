@@ -73,14 +73,13 @@ class Worker {
 showSalary () {
     console.log(`${this.fullName} salary: = ${this.dayRate} * ${this.workingDays}`)
 }
-}
 
 showSalaryWithExperience() {
     console.log(`${this.fullName} salary ${this.dayRate * this.workingDays * this.experience}`)
 }
 
 showSalaryWorker() {
-    return `${this.dayRate * this.workingDays * this.#experience}`);
+    return `${this.dayRate * this.workingDays * this.#experience}`;
 }
 
 get showExp() {
@@ -91,7 +90,8 @@ set setExp(experience) {
     this.#experience = experience;
 }
 
-sortSalaries(workersArray) = workersArray.sort(function(a, b) {
+sortSalaries(workersArray) {
+    let sortedSalary = workersArray.sort(function(a, b) {
     return a.showSalaryWorker() - b.showSalaryWorker();
 })
 
@@ -120,7 +120,7 @@ worker1.setExp = 1.5;
 console.log('New experience: ' + worker1.showExp);
 worker1.showSalaryWithExperience();
 
-let worker2 = new Worker ('Katy Perry', 300, 25);
+let worker3 = new Worker ('Katy Perry', 300, 25);
 console.log(worker1.fullName);
 worker1.showSalary();
 console.log("New experience: " + worker1.showExp);
@@ -132,58 +132,58 @@ worker1.showSalaryWithExperience();
 
 task5
 class GeometricFigure {
-    constructor() {}
-    get area() {
-        return 0; 
-    }
-    toString() {
-        return Object.getPrototypeOf(this).constructor.name;
-    }
-}
-class Triangle extends GeometricFigure {
-    constructor(a, b, c) {
-        super();
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-    getArea() {
-        let p = (this.a + this.b + this.c) / 2;
-        let s = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
-        return s;
-    }
-}
-class Square extends GeometricFigure {
-    constructor(a) {
-        super();
-        this.a = a;
-    }
-    getArea() {
-        let s = (this.a * this.a);
-        return s;
-    }
-}
-class Circle extends GeometricFigure {
-    constructor(r) {
-        super();
-        this.r = r;
-    };
-    getArea() {
-        let s = Math.PI * (this.r * this.r);
-        return s;
-    };
-}
-let figures = [new Triangle(4, 3, 5), new Square(4), new Circle(8)];
-let handleFigures = (figures) =&gt; {
-
-    let totalArea = 0;
-    for (let i = 0; i &lt; figures.length; i++) {
-        if((figures[i]) instanceof(GeometricFigure)) { 
-            console.log(`Geometric figure: ${figures[i].toString()} -
- area: ${figures[i].getArea()}`);
-            totalArea = total.area + figures[i].getArea();
-        };
-    };
-    return console.log(`Total area - ${totalArea}`);
-}
-handleFigures(figures);
+        constructor() {}
+        get area() {
+            return 0; 
+        }
+        toString() {
+            return Object.getPrototypeOf(this).constructor.name;
+        }
+    }
+    class Triangle extends GeometricFigure {
+        constructor(a, b, c) {
+            super();
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        getArea() {
+            let p = (this.a + this.b + this.c) / 2;
+            let s = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
+            return s;
+        }
+    }
+    class Square extends GeometricFigure {
+        constructor(a) {
+            super();
+            this.a = a;
+        }
+        getArea() {
+            let s = (this.a * this.a);
+            return s;
+        }
+    }
+    class Circle extends GeometricFigure {
+        constructor(r) {
+            super();
+            this.r = r;
+        };
+        getArea() {
+            let s = Math.PI * (this.r * this.r);
+            return s;
+        };
+    }
+    let figures = [new Triangle(4, 3, 5), new Square(4), new Circle(8)];
+    let handleFigures = (figures) => {
+    
+        let totalArea = 0;
+        for (let i = 0; i < figures.length; i++) {
+            if((figures[i]) instanceof(GeometricFigure)) { 
+                console.log(`Geometric figure: ${figures[i].toString()} -
+     area: ${figures[i].getArea()}`);
+                totalArea += figures[i].getArea();
+            };
+        };
+        return console.log(`Total area - ${totalArea}`);
+    }
+    handleFigures(figures);
