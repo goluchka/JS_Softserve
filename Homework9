@@ -53,18 +53,23 @@ task4
 <body>
 <form>
    <p id="checkbox">
-    <input type="checkbox" class="mark">
-    <input type="checkbox" class="mark">
-    <input type="checkbox" class="mark">
-    <input type="checkbox" class="mark">
-    <input type="checkbox" class="mark">
-    <input type="checkbox" class="mark">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
     </p> 
 </form>
 
 <script>
+const $checkboxes = $(':checkbox');
+$checkboxes.on('click', function() {
+    if ($(':checkbox:checked').length == 3) {
+        $checkboxes.attr('disabled', 'true');
+    }
+})
 </script>
-
 </body>
 
 
