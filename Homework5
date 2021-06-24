@@ -63,7 +63,6 @@ console.log('Current course: ' + stud3.showCourse());
 
 task4
 class Worker {
-    
     #experience = 1.2;
     constructor(fullName, dayRate, workingDays) {
         this.fullName = fullName; 
@@ -95,7 +94,7 @@ sortSalaries(workersArray) {
     return a.showSalaryWorker() - b.showSalaryWorker();
 })
 
-for (let i = 0; i < sotedSalary.length; i++) {
+for (let i = 0; i < sortedSalary.length; i++) {
     console.log(sortedSalary[i].fullName + ': ' + sortedSalary[i].showSalaryWorker());
         }
     }
