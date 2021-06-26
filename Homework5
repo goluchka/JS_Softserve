@@ -57,7 +57,7 @@ let stud2 = new Student('Aretha', 'Franklin', 2016);
 console.log(stud2.showFullName('Franklin'));
 console.log('Current course: ' + stud2.showCourse());
 let stud3 = new Student('Ella', 'Fitzgerald', 2020);
-console.log(stud2.showFullName('Fitzgerald'));
+console.log(stud3.showFullName('Fitzgerald'));
 console.log('Current course: ' + stud3.showCourse());
 
 
@@ -111,23 +111,22 @@ console.log('New experience: ' + worker1.showExp);
 worker1.showSalaryWithExperience();
 
 let worker2 = new Worker ('Beyonce Knowles', 200, 22);
-console.log(worker1.fullName);
-worker1.showSalary();
-console.log("New experience: " + worker1.showExp);
-worker1.showSalaryWithExperience();
-worker1.setExp = 1.5;
-console.log('New experience: ' + worker1.showExp);
-worker1.showSalaryWithExperience();
+console.log(worker2.fullName);
+worker2.showSalary();
+console.log("New experience: " + worker2.showExp);
+worker2.showSalaryWithExperience();
+worker2.setExp = 1.5;
+console.log('New experience: ' + worker2.showExp);
+worker2.showSalaryWithExperience();
 
 let worker3 = new Worker ('Katy Perry', 300, 25);
-console.log(worker1.fullName);
-worker1.showSalary();
-console.log("New experience: " + worker1.showExp);
-worker1.showSalaryWithExperience();
-worker1.setExp = 1.5;
-console.log('New experience: ' + worker1.showExp);
-worker1.showSalaryWithExperience();
-
+console.log(worker3.fullName);
+worker3.showSalary();
+console.log("New experience: " + worker3.showExp);
+worker3.showSalaryWithExperience();
+worker3.setExp = 1.5;
+console.log('New experience: ' + worker3.showExp);
+worker3.showSalaryWithExperience();
 
 task5
 class GeometricFigure {
