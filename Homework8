@@ -55,7 +55,7 @@ checkCardNum('123456789111314'); - вводити лише цифри без д�
 
 task6
 let checkMail = (mail) => {
-    if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+    if (/^[a-zA-Z0-9]+([-]?\w+)*@\w+([-]?\w+)*(\.\w+)$/.test(mail)) {
      console.log ('Email is correct!');
      } else {
        console.log ('Email is incorrect!')
@@ -66,11 +66,10 @@ let checkMail = (mail) => {
 
 task7
 let checkLogin = (login) => {
-    if (/^[A-Za-z0-9]{2,10}$/i.test(login)) {
-        console.log(true);
-        console.log(login.match(/\d+\./g));
-    } else { 
-        console.log(false);
-    }
+	const re = /^[a-zA-Z]{1}[a-zA-Z0-9\.]{1,9}$/;
+	const numbers = /[0-9\.]+/g;
+	const result = login.match(numbers);
+	const resultFinal = re.test(login);
+	console.log(result);
 }
-checkLogin('dvb4hr13') // поки не знаю як знайти floating number. додала варіант з опціональною крапкою (/(^[A-Za-z0-9]{2,10})\.?$/i.test(login)), але це не сильно допомогло 
+checkLogin('dvb4.4hr13') 
