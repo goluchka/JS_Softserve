@@ -1,0 +1,238 @@
+HTML FILE 
+   <div class="container">
+    <div class="header">
+        <script src="https://kit.fontawesome.com/9554a26524.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="VF.css">
+        <script src='VF.js'></script>
+        
+        <h2>Create account</h2>
+    </div>
+    <form id="form" class="form"> 
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Anastasia" id="username"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+    </div>
+        <div class="form-control">
+            <label for="username">Email</label>
+            <input type="email" placeholder="hello@goluk.com" id="email"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+        <label for="username">Password</label>
+        <input type="password" placeholder="Your password here" id="password"/>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+        <label for="username">Password check</label>
+        <input type="password" placeholder="Repeat password" id="password2"/>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+        <button><b>Submit</b></button>
+    </form>
+</div>
+
+
+
+
+CSS FILE
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ec78c6;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;    
+}
+
+.container{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0 , 0.3);
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+}
+
+.header {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #e9d7f0;
+    padding: 20px 40px;
+}
+
+.header h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: rgb(97, 5, 97);
+}
+
+.form-control.success input {
+    border-color: green;
+}
+
+.form-control.error input {
+    border-color: red;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: rgb(85, 212, 46);
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: rgba(255, 0, 0, 0.849);
+    visibility: visible;
+}
+
+.form-control small {
+    color: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    background-color:rgb(179, 28, 158);
+    border: 2px solid rgb(131, 15, 106);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+JS FILE
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    checkInputs();
+});
+
+function checkInputs() {
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+
+    if(usernameValue === '') {
+        setErrorFor(username, 'Username cannot be blank!');
+    } else {
+        setSuccessFor(username);
+    }
+
+    if(emailValue === '') {
+        setErrorFor(email, 'Email cannot be blank!');
+    }  else {
+        setSuccessFor(email);
+    }
+
+    if(passwordValue === '') {
+        setErrorFor(password, 'Password cannot be blank');
+    } else {
+        setSuccessFor(password);
+    }
+
+    if(password2Value === '') {
+        setErrorFor(password2, 'Password check cannot be blank');
+    } else if(passwordValue !== password2Value) {
+        setErrorFor(password2, 'Passwords does not match');
+    } else {
+        setSuccessFor(password2);
+    }
+}
+
+    function setErrorFor (input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-control error';
+        small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'form-control success';
+    }
+
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+    // function isPassword(password) {
+    // return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password);
+}
+
