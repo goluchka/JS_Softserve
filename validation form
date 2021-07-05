@@ -1,10 +1,12 @@
 HTML FILE 
-   <div class="container">
+<!DOCTYPE html>
+
+    <script src="https://kit.fontawesome.com/9554a26524.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="VF.css">
+    
+
+    <div class="container">
     <div class="header">
-        <script src="https://kit.fontawesome.com/9554a26524.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="VF.css">
-        <script src='VF.js'></script>
-        
         <h2>Create account</h2>
     </div>
     <form id="form" class="form"> 
@@ -17,7 +19,7 @@ HTML FILE
     </div>
         <div class="form-control">
             <label for="username">Email</label>
-            <input type="email" placeholder="hello@goluk.com" id="email"/>
+            <input type="email" placeholder="hello@goluk.com" id="email" />
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
@@ -40,12 +42,15 @@ HTML FILE
     </div>
         <button><b>Submit</b></button>
     </form>
+    <script src="VF.js"></script>
 </div>
 
 
 
-
 CSS FILE
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
 
 * {
     box-sizing: border-box;
@@ -161,13 +166,12 @@ body {
     width: 100%;
 }
 
-
 JS FILE
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+let form = document.getElementById('form');
+let username = document.getElementById('username');
+let email = document.getElementById('email');
+let password = document.getElementById('password');
+let password2 = document.getElementById('password2');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -176,10 +180,10 @@ form.addEventListener('submit', e => {
 });
 
 function checkInputs() {
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-    const password2Value = password2.value.trim();
+    let usernameValue = username.value.trim();
+    let emailValue = email.value.trim();
+    let passwordValue = password.value.trim();
+    let password2Value = password2.value.trim();
 
     if(usernameValue === '') {
         setErrorFor(username, 'Username cannot be blank!');
@@ -189,7 +193,9 @@ function checkInputs() {
 
     if(emailValue === '') {
         setErrorFor(email, 'Email cannot be blank!');
-    }  else {
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Email is not valid');
+    } else {
         setSuccessFor(email);
     }
 
@@ -208,7 +214,7 @@ function checkInputs() {
     }
 }
 
-    function setErrorFor (input, message) {
+    function setErrorFor(input, message) {
         const formControl = input.parentElement;
         const small = formControl.querySelector('small');
         formControl.className = 'form-control error';
@@ -220,19 +226,6 @@ function checkInputs() {
         formControl.className = 'form-control success';
     }
 
-
-function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
-	small.innerText = message;
+    function isEmail(email){
+    return /^[a-zA-Z0-9]+([-]?\w+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9-]+)*$/.test(email);
 }
-
-function setSuccessFor(input) {
-	const formControl = input.parentElement;
-	formControl.className = 'form-control success';
-}
-    // function isPassword(password) {
-    // return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password);
-}
-
